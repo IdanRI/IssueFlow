@@ -1,3 +1,2 @@
-INSERT INTO task ( description, completed) VALUES
-                                               ( 'description1', 'completed'),
-                                               ('description2', 'completed');
+-- Seed data is managed by DataInitializer.java
+-- This file is intentionally left empty to avoid conflicts with programmatic seeding

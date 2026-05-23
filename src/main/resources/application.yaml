@@ -5,20 +5,30 @@ spring:
   application:
     name: issueflow
   datasource:
-    url: jdbc:postgresql://localhost:5432/issueflow
-    username: issueflow
-    password: issueflow
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/issueflow}
+    username: ${DB_USERNAME:issueflow}
+    password: ${DB_PASSWORD:issueflow}
     driverClassName: org.postgresql.Driver
-    platform: postgres
   jpa:
     database: POSTGRESQL
     show-sql: true
     hibernate:
       ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
   sql:
     init:
-      mode: always
+      mode: never
   servlet:
     multipart:
       max-file-size: 10MB
       max-request-size: 10MB
+
+jwt:
+  secret: YTJiM2M0ZDVlNmY3ODlhYmMxZDJlM2Y0YTViNmM3ZDhlOWYwYTFiMmMzZDRlNWY2YTdiOGM5MDEK
+  expiration: 3600000
+
+issueflow:
+  escalation:
+    rate: 60000

@@ -1,3 +1,2 @@
-CREATE TABLE IF NOT EXISTS task (
-                                    description VARCHAR(64) NOT NULL,
-    completed   VARCHAR(30) NOT NULL);
+-- Schema is managed by Hibernate ddl-auto=update
+-- This file is intentionally left minimal

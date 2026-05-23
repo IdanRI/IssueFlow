@@ -5,22 +5,30 @@ spring:
   application:
     name: issueflow
   datasource:
-    url: jdbc:h2:mem:db;MODE=PostgreSQL;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:testdb;MODE=PostgreSQL;DB_CLOSE_ON_EXIT=FALSE
     username: sa
     password: password
     driverClassName: org.h2.Driver
-  sql:
-    init:
-      platform: mssql
-  h2:
-    console:
-      enabled: true
   jpa:
-    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.H2Dialect
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
+  sql:
+    init:
+      mode: never
+  h2:
+    console:
+      enabled: false
   servlet:
     multipart:
       max-file-size: 10MB
       max-request-size: 10MB
+
+jwt:
+  secret: dGVzdC1zZWNyZXQta2V5LXRoYXQtaXMtbG9uZy1lbm91Z2gtZm9yLWhtYWMtc2hhMjU2LWFsZw==
+  expiration: 3600000
+
+issueflow:
+  escalation:
+    rate: 60000
