@@ -1,3 +1,9 @@
+### Confidential / Assignment Files ###
+README.md
+TDP_issueflow_requirements.pdf
+Instructions.md
+
+### Build ###
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
